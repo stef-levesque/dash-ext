@@ -1,0 +1,30 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+	<head>
+	<title>Dashboard Extension's Popup</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+
+	</style>
+
+	<!--
+	- JavaScript and HTML must be in separate files: see our Content Security
+	- Policy documentation[1] for details and explanation.
+	-
+	- [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+	-->
+	<script src="js/qrcode/qrcode.min.js"></script>
+	<script src="js/popup.js"></script>
+</head>
+<body>
+	<div id="qrcode" style="width=100px; height=100px; margin-top:15px;" ></div>
+	<hr>
+	<div id="status"></div>
+</body>
+</html>
+
