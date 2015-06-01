@@ -2,16 +2,28 @@
 <html>
 	<head>
 		<title>Dashboard Options</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/options.css">
 		<script src="js/options.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div id="content">
-			<div id="title">
-				<h1>Dashboard options</h1>
+			<div id="header">
+				<h1 style="color: darkgreen; font-weight: bold;">
+					<img src="img/icon.png">
+					<span>ashboard</span>
+				</h1>
 			</div>
-			<div id="logo">
-				<img src="img/icon.png">
+			<div id="content-inner-container">
+				<h2>OPTIONS</h2>
+				<div class="section-wrapper" id="ril-keyboard-shortcut">
+					<h3>Keyboard Shortcut:</h3>
+					<ul class="section-item-list">
+						<li><input id="keyboard-shortcut-checkbox" type="checkbox" class="checkbox" /><label>Enabled</label></li>
+						<li><input id="keyboard-shortcut-text" type="text" class="text" placeholder="alt+d"/></li>
+						<li class="shortcut-info"></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</body>
