@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			height: 100
 		});
 		qrcode.makeCode(url);
+		
+		renderStatus('QR code done');
 
 	});
 });
