@@ -29,7 +29,7 @@ Chrome 42+
 
 * [Getting Started: Building a Chrome Extension](https://developer.chrome.com/extensions/getstarted)
 * [QRCode.js](https://github.com/davidshimjs/qrcodejs)
-
+* [Open Iconic](https://useiconic.com/open)
 ## License
 
 MIT License
