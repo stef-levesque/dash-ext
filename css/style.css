@@ -11,3 +11,6 @@ body {
 	/*overflow: hidden;*/
 	max-width: 400px;
 }
+#commands{
+	text-align: center;
+}

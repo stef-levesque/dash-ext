@@ -4,6 +4,7 @@
 
 * Keyboard shortcut
 * Option page
+* Commands section
 
 ## Done
 
@@ -11,7 +12,6 @@
 
 ## Ideas
 
-* Commands section
 * Popout tab
 * Save to [Pocket](https://getpocket.com)
 * Add to [Wunderlist](https://www.wunderlist.com)
