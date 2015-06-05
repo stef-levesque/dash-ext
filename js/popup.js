@@ -56,6 +56,9 @@ function renderStatus(statusText) {
 
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
+		
+		document.getElementById('popout').onclick = function(){window.open(url, "detab", "toolbar=0");};
+		
 		renderStatus('Generate QR code for ' + url);
 
 		// Creates a new QRCode object, by passing a reference to a DOM element

@@ -9,10 +9,10 @@
 ## Done
 
 * QR code
+* Popout tab
 
 ## Ideas
 
-* Popout tab
 * Save to [Pocket](https://getpocket.com)
 * Add to [Wunderlist](https://www.wunderlist.com)
 * Catch notifications
