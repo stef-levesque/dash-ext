@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /// <reference path="../typings/chrome/chrome.d.ts" />
-/// <reference path="../js/qrcode/qrcode.min.js" />
+/// <reference path="../js/qrcode.min.js" />
 
 /**
  * Get the current URL.
