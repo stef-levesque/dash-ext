@@ -1,6 +1,6 @@
 # TODO
 
-## Unfinished
+## In Progress
 
 * Keyboard shortcut
 * Option page
@@ -11,7 +11,9 @@
 * QR code
 * Popout tab
 
-## Extension Ideas
+## Backlog
+
+#### Extension Ideas
 
 * URL
  * Shorten URL
@@ -34,8 +36,10 @@
 * Override new tab page
 * Detect video 
 * Weather forecast
+* `<html contenteditable>` section
 
-## Project Tasks
+#### Project Tasks
 
+* Use [jQuery](https://jquery.com/)
 * Convert to [TypeScript](https://www.typescriptlang.org/)
 * Add vscode tasks for compile and watch
