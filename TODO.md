@@ -10,6 +10,7 @@
 
 * QR code
 * Popout tab
+* Use [jQuery](https://jquery.com/)
 
 ## Backlog
 
@@ -40,6 +41,5 @@
 
 #### Project Tasks
 
-* Use [jQuery](https://jquery.com/)
 * Convert to [TypeScript](https://www.typescriptlang.org/)
 * Add vscode tasks for compile and watch

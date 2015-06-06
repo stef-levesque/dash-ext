@@ -3,6 +3,8 @@
 // found in the LICENSE file.
 
 /// <reference path="../typings/chrome/chrome.d.ts" />
+/// <reference path="../typings/jquery/jquery.d.ts"/>
+/// <reference path="../js/jquery-2.1.4.min.js" />
 /// <reference path="../js/qrcode.min.js" />
 
 /**
@@ -18,7 +20,7 @@ function getCurrentTabUrl(callback) {
 		active: true,
 		currentWindow: true
 	};
-	
+
 	chrome.tabs.query(queryInfo, function(tabs) {
 		// chrome.tabs.query invokes the callback with a list of tabs that match the
 		// query. When the popup is opened, there is certainly a window and at least
@@ -51,19 +53,21 @@ function getCurrentTabUrl(callback) {
 }
 
 function renderStatus(statusText) {
-	document.getElementById('status').textContent = statusText;
+	$('#status').text(statusText);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+$().ready( function() {
 	getCurrentTabUrl(function(url) {
 		
-		document.getElementById('popout').onclick = function(){window.open(url, "detab", "toolbar=0");};
+		$('#popout').click( function() {
+			window.open(url, "detab", "toolbar=0");
+		});
 		
 		renderStatus('Generate QR code for ' + url);
 
 		// Creates a new QRCode object, by passing a reference to a DOM element
 		// and specifing the desired dimensions
-		var qrcode = new QRCode(document.getElementById("qrcode"), {
+		var qrcode = new QRCode($("#qrcode")[0], {
 			width: 100,
 			height: 100
 		});
