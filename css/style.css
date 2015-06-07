@@ -21,7 +21,7 @@ body {
 }
 #forecast {
 	font-size: 66%;
-	min-width: 256px;
+	min-width: 300px;
 }
 /* should be all div? */
 #commands{

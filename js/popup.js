@@ -92,7 +92,7 @@ function fetchWeather(city) {
 	city = typeof city !== 'undefined' ? city : 'montreal,qc';
 	
 	var api = 'https://query.yahooapis.com/v1/public/yql?format=json&q=';
-	var req = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + city + '")';
+	var req = 'select * from weather.forecast where u=\'c\' and woeid in (select woeid from geo.places(1) where text="' + city + '")';
 	var url = api + encodeURIComponent(req);
 	
 	var jqxhr = $.getJSON(url, function () {
