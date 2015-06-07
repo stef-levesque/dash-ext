@@ -16,6 +16,13 @@ body {
 #status.placeholder {
 	color: #c0c0c0;
 }
+.hidden{
+	display: none;
+}
+#forecast {
+	font-size: 66%;
+	min-width: 256px;
+}
 /* should be all div? */
 #commands{
 	text-align: center;

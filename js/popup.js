@@ -60,6 +60,10 @@ function renderStatus(statusText) {
 	}
 }
 
+function clearup() {
+	$('#outputs').children('div').addClass('hidden');
+}
+
 function popoutUrl(params) {
 	getCurrentTabUrl(function (url) {
 		window.open(url, 'detab', 'toolbar=0');
@@ -67,11 +71,12 @@ function popoutUrl(params) {
 }
 
 function makeQR() {
+	clearup();
 	getCurrentTabUrl(function (url) {
 		if (qr == null) {
 			// Creates a new QRCode object, by passing a reference to a DOM element
 			// and specifing the desired dimensions
-			qr = new QRCode($('#qrcode')[0], {
+			qr = new QRCode($('div#qrcode')[0], {
 				width: 100,
 				height: 100
 			});
@@ -80,6 +85,30 @@ function makeQR() {
 		qr.clear();
 		qr.makeCode(url);
 	});
+	$('div#qrcode').removeClass('hidden');
+}
+
+function fetchWeather(city) {
+	city = typeof city !== 'undefined' ? city : 'montreal,qc';
+	
+	var api = 'https://query.yahooapis.com/v1/public/yql?format=json&q=';
+	var req = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + city + '")';
+	var url = api + encodeURIComponent(req);
+	
+	var jqxhr = $.getJSON(url, function () {
+		var resp = jqxhr.responseJSON;
+		var desc = resp.query.results["channel"]["item"]["description"];
+		
+		$('div#forecast').contents().remove();
+		$('div#forecast').append(desc);
+		$('div#forecast').removeClass('hidden');
+	});
+
+}
+
+function showWeather() {
+	clearup();
+	fetchWeather();
 }
 
 $().ready(function () {
@@ -89,5 +118,6 @@ $().ready(function () {
 	
 	$('#popout').click(popoutUrl);
 	$('#makeqr').click(makeQR);
+	$('#weather').click(showWeather);
 
 });

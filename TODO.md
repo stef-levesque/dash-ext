@@ -4,13 +4,15 @@
 
 * Keyboard shortcut
 * Option page
-* Commands section
+* Weather forecast
+ * [Yahoo Weather](https://developer.yahoo.com/weather/) ?
 
 ## Done
 
 * QR code
 * Popout tab
 * Use [jQuery](https://jquery.com/)
+* Commands and Outputs sections
 
 ## Backlog
 
@@ -43,8 +45,6 @@
  * Hide all but selection
  * Override new tab page
  * Restore pin tabs
-* Weather forecast
- * [Yahoo Weather](https://developer.yahoo.com/weather/) ?
 * `<html contenteditable>` section
 
 #### Project Tasks
