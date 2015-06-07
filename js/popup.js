@@ -1,11 +1,11 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 /// <reference path="../typings/chrome/chrome.d.ts" />
 /// <reference path="../typings/jquery/jquery.d.ts"/>
 /// <reference path="../js/jquery-2.1.4.min.js" />
 /// <reference path="../js/qrcode.min.js" />
+
+'use strict';
+
+var qr = null;
 
 /**
  * Get the current URL.
@@ -21,7 +21,7 @@ function getCurrentTabUrl(callback) {
 		currentWindow: true
 	};
 
-	chrome.tabs.query(queryInfo, function(tabs) {
+	chrome.tabs.query(queryInfo, function (tabs) {
 		// chrome.tabs.query invokes the callback with a list of tabs that match the
 		// query. When the popup is opened, there is certainly a window and at least
 		// one tab, so we can safely assume that |tabs| is a non-empty array.
@@ -38,7 +38,7 @@ function getCurrentTabUrl(callback) {
 		// from |queryInfo|), then the "tabs" permission is required to see their
 		// "url" properties.
 		console.assert(typeof url == 'string', 'tab.url should be a string');
-		
+
 		callback(url);
 	});
 
@@ -53,27 +53,41 @@ function getCurrentTabUrl(callback) {
 }
 
 function renderStatus(statusText) {
-	$('#status').text(statusText);
+	if (statusText == '') {
+		$('#status').text('Dashboard').addClass('placeholder');
+	} else {
+		$('#status').text(statusText).removeClass('placeholder');
+	}
 }
 
-$().ready( function() {
-	getCurrentTabUrl(function(url) {
-		
-		$('#popout').click( function() {
-			window.open(url, "detab", "toolbar=0");
-		});
-		
-		renderStatus('Generate QR code for ' + url);
-
-		// Creates a new QRCode object, by passing a reference to a DOM element
-		// and specifing the desired dimensions
-		var qrcode = new QRCode($("#qrcode")[0], {
-			width: 100,
-			height: 100
-		});
-		qrcode.makeCode(url);
-		
-		renderStatus('QR code done');
-
+function popoutUrl(params) {
+	getCurrentTabUrl(function (url) {
+		window.open(url, 'detab', 'toolbar=0');
 	});
+}
+
+function makeQR() {
+	getCurrentTabUrl(function (url) {
+		if (qr == null) {
+			// Creates a new QRCode object, by passing a reference to a DOM element
+			// and specifing the desired dimensions
+			qr = new QRCode($('#qrcode')[0], {
+				width: 100,
+				height: 100
+			});
+		}
+		
+		qr.clear();
+		qr.makeCode(url);
+	});
+}
+
+$().ready(function () {
+	
+	// Bind commands
+	$('#commands img').hover( function () {renderStatus( $(this).attr('alt') );}, function () {renderStatus('');} );
+	
+	$('#popout').click(popoutUrl);
+	$('#makeqr').click(makeQR);
+
 });

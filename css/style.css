@@ -3,14 +3,24 @@ body {
 	font-size: 100%;
 	padding: 20px;
 	background-color: #f0f0f0;
+	min-width: 128px;
 }
 #status {
 	/* avoid an excessively wide status text */
 	white-space: pre;
+	text-align: center;
 	text-overflow: ellipsis;
 	/*overflow: hidden;*/
 	max-width: 400px;
 }
+#status.placeholder {
+	color: #c0c0c0;
+}
+/* should be all div? */
 #commands{
 	text-align: center;
+}
+#qrcode img{
+	margin-left: auto;
+	margin-right: auto;
 }
