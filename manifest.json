@@ -20,9 +20,16 @@
 		"default_popup": "popup.html",
 		"default_title": "Let's get busy!"
 	},
+	
+	"content_scripts": [ {
+		"js": [ "js/content_script.js" ],
+		"matches": [ "*://*/*" ]
+	}],
+	 	
 	"permissions": [
 		"activeTab",
 		"contextMenus",
-		"notifications"
+		"notifications",
+		"http://*/*", "https://*/*"
 	]
 }

@@ -2,7 +2,6 @@
 
 ## In Progress
 
-* Keyboard shortcut
 * Option page
 * Weather forecast
  * [Yahoo Weather](https://developer.yahoo.com/weather/) ?
@@ -13,6 +12,9 @@
 * Popout tab
 * Use [jQuery](https://jquery.com/)
 * Commands and Outputs sections
+* Keyboard shortcut
+ * Extract `<video>` with `alt+v`
+ * Extract `<object>` with `alt+o`
 
 ## Backlog
 
@@ -33,8 +35,6 @@
  * Atom/RSS feeds
  * Push notifications with [Pushover](https://pushover.net/)
 * Automated scripts per site
- * Extract `<video>` on [YouTube](https://www.youtube.com)
- * Extract `<object>` on [illico](https://illicoweb.videotron.com/chaines)
  * Remove ads from [Pxlr](http://apps.pixlr.com/editor/)
 * dashcli from Omnibox
  * Keyword recognition
