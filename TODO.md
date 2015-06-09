@@ -3,6 +3,7 @@
 ## In Progress
 
 * Option page
+* Stock quotes
 * Weather forecast
  * [Yahoo Weather](https://developer.yahoo.com/weather/) ?
 

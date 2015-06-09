@@ -111,6 +111,25 @@ function showWeather() {
 	fetchWeather();
 }
 
+function fetchQuote(symbol) {
+	symbol = typeof symbol !== 'undefined' ? symbol : 'EA';
+	
+	// from https://web.archive.org/web/20140329232231/http://www.gummy-stuff.org/Yahoo-data.htm
+	// n:name; g:day's low; h:day's high; j:52w low; k:52w high; c6:change now
+	var api = 'http://finance.yahoo.com/d/quotes.csv?f=l1&s=';
+	var url = api + encodeURIComponent(symbol);
+	
+	$.get(url, function (data) {
+		$('div#quote')[0].textContent = symbol + ': ' + data; 
+		$('div#quote').removeClass('hidden');
+	});
+}
+
+function showQuote() {
+	clearup();
+	fetchQuote();
+}
+
 $().ready(function () {
 	
 	// Bind commands
@@ -119,5 +138,6 @@ $().ready(function () {
 	$('#popout').click(popoutUrl);
 	$('#makeqr').click(makeQR);
 	$('#weather').click(showWeather);
+	$('#stock').click(showQuote);
 
 });
