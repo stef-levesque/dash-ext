@@ -6,6 +6,7 @@
 * Stock quotes
 * Weather forecast
  * [Yahoo Weather](https://developer.yahoo.com/weather/) ?
+* Changes png for svg
 
 ## Done
 
@@ -52,6 +53,5 @@
 
 * Convert to [TypeScript](https://www.typescriptlang.org/)
 * Add vscode tasks for compile and watch
-* Changes png for svg
 * Ignore warnings from jquery and other .min.js files
 * License
