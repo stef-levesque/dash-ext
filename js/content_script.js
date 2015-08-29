@@ -11,6 +11,9 @@ function extractTagName(str) {
 		w += parseInt(document.defaultView.getComputedStyle(e).width, 10);
 		h += parseInt(document.defaultView.getComputedStyle(e).height, 10);
 		window.resizeTo(w, h);
+		if (str=='video'){
+			e.play();
+		}
 	}
 }
 
