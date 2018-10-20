@@ -1,4 +1,3 @@
-/// <reference path="../typings/chrome/chrome.d.ts" />
 
 function extractTagName(str) {
 	var e = document.getElementsByTagName(str)[0];

@@ -1,5 +1,3 @@
-/// <reference path="../typings/chrome/chrome.d.ts" />
-/// <reference path="../typings/jquery/jquery.d.ts"/>
 /// <reference path="../js/jquery-2.1.4.min.js" />
 /// <reference path="../js/qrcode.min.js" />
 
