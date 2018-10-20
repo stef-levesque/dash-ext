@@ -1,4 +1,4 @@
-/// <reference path="../js/jquery-2.1.4.min.js" />
+/// <reference path="../js/jquery-3.3.1.min.js" />
 /// <reference path="../js/qrcode.min.js" />
 
 'use strict';
@@ -128,7 +128,7 @@ function showQuote() {
 	fetchQuote();
 }
 
-$().ready(function () {
+jQuery(function () {
 	
 	// Bind commands
 	$('#commands img').hover( function () {renderStatus( $(this).attr('alt') );}, function () {renderStatus('');} );
