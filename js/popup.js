@@ -62,6 +62,24 @@ function clearup() {
 	$('#outputs').children('div').addClass('hidden');
 }
 
+function picInPic() {
+	var code = `
+		if (document.pictureInPictureElement) {
+			document.exitPictureInPicture();
+		} else {
+			let v = window.document.getElementsByTagName('video')[0];
+			if (v) {
+				v.requestPictureInPicture();
+			}
+		}
+	`
+
+	chrome.tabs.executeScript({
+		code: code,
+		allFrames: true
+	});
+}
+
 function popoutUrl(params) {
 	getCurrentTabUrl(function (url) {
 		window.open(url, 'detab', 'toolbar=0');
@@ -133,6 +151,7 @@ jQuery(function () {
 	// Bind commands
 	$('#commands img').hover( function () {renderStatus( $(this).attr('alt') );}, function () {renderStatus('');} );
 	
+	$('#picinpic').click(picInPic);
 	$('#popout').click(popoutUrl);
 	$('#makeqr').click(makeQR);
 	$('#weather').click(showWeather);

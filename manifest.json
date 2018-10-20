@@ -27,7 +27,8 @@
 	
 	"content_scripts": [ {
 		"js": [ "js/content_script.js" ],
-		"matches": [ "*://*/*" ]
+		"matches": [ "*://*/*" ],
+		"all_frames": true
 	}],
 	 	
 	"omnibox": {
